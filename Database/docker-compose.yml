@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  MoriensTrelloDb:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "MoriensTrello"
+      POSTGRES_USER: "morienstrello"
+      POSTGRES_PASSWORD: "pwd_for_tests"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - .:/var/lib/postgresql/data
+    ports:
+      - "1313:5432"
